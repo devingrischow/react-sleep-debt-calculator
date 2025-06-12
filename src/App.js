@@ -298,7 +298,7 @@ function SleepDebtTotalLabel(sleepDebtTotal, daysCounted){
     return (
       <div className="Sleep-Debt-Total-Label">
         <h2>Total Sleep Debt for {daysCounted} Days:</h2>
-        <p>{sleepDebtTotal} Hours</p>
+        <p>{sleepDebtTotal * -1} Hours of Sleep Debt</p>
       </div>
     )
 
