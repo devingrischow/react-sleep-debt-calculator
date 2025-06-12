@@ -70,21 +70,18 @@ function App() {
   }
 
 
-  //A State is used to show how many days are added together to the total sleep debt 
-  const [sleepDebtDays, setSleepDebtDays] = useState(0);
+
 
   //Handle on click of the calculate total button 
   //Needs to handle if theres not enough values (at least 2 needed)
   //or anything else that might cause issues 
   const handlePressCalculateSleepDebtButton = () => {
 
-    var errorAlertMessage = "";
 
     var sleepDebtCheckingValue = 0;
 
     //no parameters needed, as it uses the states directly 
 
-    setSleepDebtDays(0);
     
     
     
@@ -94,7 +91,6 @@ function App() {
         sleepDebtCheckingValue += 1;
       }
     }
-    setSleepDebtDays(sleepDebtCheckingValue);
 
 
 
@@ -317,7 +313,7 @@ function SleepDebtTotalLabel(sleepDebtTotal, daysCounted){
 function SleepInput(dayNum, hoursSlept, setHoursSlept, showDayValue, setHoveringState, isHoveringState, setShowDayAmount, handleRemoveLastDay) {
   console.log(`SleepInput called with dayNum: ${dayNum}, hoursSlept: ${hoursSlept}, setHoursSlept: ${setHoursSlept}, showDayValue: ${showDayValue}`);
 
-  var isLastItem = dayNum == showDayValue - 1 && dayNum > 1;
+  var isLastItem = dayNum === showDayValue - 1 && dayNum > 1;
   console.log(`Is Last Item: ${isLastItem}`);
 
 
@@ -366,7 +362,7 @@ function SleepInput(dayNum, hoursSlept, setHoursSlept, showDayValue, setHovering
       {
         /* Only show the delete button if it is the last item, being hovered over */
 
-        isHoveringState == true && isLastItem == true && ( 
+        isHoveringState === true && isLastItem === true && ( 
           <button className="deleteCell" onClick={() => handleRemoveLastDay(setShowDayAmount, showDayValue)}>X</button>
         )
 
