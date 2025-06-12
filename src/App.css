@@ -1,6 +1,35 @@
-.App {
-  text-align: center;
+:root{
+  --main-Background: #17011d;
+
+
+  --hover-on-cell-background: #2f1238;
 }
+
+
+
+.App {
+
+  /* make sites height 100% across everywhere */
+  min-height: 100vh;
+
+
+  text-align: center;
+
+  background-color: #17011d;
+
+
+  /* Most Text on site will be white, unless specified */
+  color: white;
+
+}
+
+
+
+body{
+  margin: 0;
+}
+
+
 
 .App-logo {
   height: 40vmin;
@@ -14,8 +43,7 @@
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -35,4 +63,99 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+
+
+
+
+
+
+/*              --Components--               */
+
+
+
+.HoursInput {
+  width: 40%;
+  height: 5vw;
+
+  text-align: center
+}
+
+
+  
+
+
+
+#calculate-debt-button {
+
+  margin-bottom: 15vmin;
+
+}
+
+
+/* Last Day Cell, Specifically Hover (nothing else is needed) */
+#Last-Day:hover {
+  background-color: var(--hover-on-cell-background);
+  border: 5px solid #5d1616;
+  border-radius: 10px;
+
+}
+
+.OptimalSleepInput{
+  margin-top: 15vmin;
+
+  margin: 10px;
+}
+
+
+
+
+
+
+
+
+
+/*              --Layout Controllers--               */
+
+.SleepDetailsContainer{
+  display: flex;
+    
+  max-width: 50%;
+  flex-direction: column;
+}
+
+.Sleep-Row-Container {
+    display: flex;
+    justify-content: space-evenly;
+    align-content: flex-start;
+    align-items: flex-start;
+}
+
+.Sleep-Day-Hour-Details{
+  display: flex;
+  justify-content: space-around;
+}
+
+.SleepEntryContainers {
+    max-width: 45%;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+
+
+.Sleep-Input-Container {
+    display: flex;
+
+    
+    margin: 10px;
+    padding: 20px;
+    padding-right: 10vw;
+
+    justify-content: space-between;
+    align-items: center;
 }
